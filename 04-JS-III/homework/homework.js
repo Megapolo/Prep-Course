@@ -3,21 +3,21 @@
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un  array (pasado por parametro)
   // Tu código:
-  console.log(devolverPrimerElemento [0]);
+  return array [0];
 }
 
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
-  console.log(devolverUltimoElemento[devolverUltimoElemento.length - 1]);
+  return array[array.length - 1];
 }
 
 
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
-  console.log(array.length);
+  return array.length;
 }
 
 
@@ -26,11 +26,12 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  var Nuevoarray = []
-  for(var x = 0; x < array.length; x++)[
-    Nuevoarray[x] = array[x] + 1
-  ]
-  return Nuevoarray;
+  var nuevoArray = [];
+  for(var i = 0; i < array.length; i++) {
+    nuevoArray[i] = array[i] + 1;
+  }
+
+  return nuevoArray;
 }
 
 
@@ -38,8 +39,8 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
- array[array.length] = elemento;
- return array;
+  array[array.length] = elemento;
+  return array;
 }
 
 
@@ -81,11 +82,11 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
-  var sumar = 0 
-  for (var i = 0; i < numero.length; i++) {
-    sumar = sumar + i
+  var suma = 0;
+  for(var i = 0; i < numeros.length; i++) {
+    suma = suma + numeros[i];
   }
-  return sumar
+  return suma;
 }
 
 
@@ -93,7 +94,7 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
-  return agregarNumeros(resultadosTest) / resultadosTest.length
+  return agregarNumeros(resultadosTest) / resultadosTest.length;
 
 }
 
@@ -102,13 +103,13 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
-  var maximo = numero[0];
-for (var i = 1; i < numero.length; i++) {
-if (numero[i] > maximo) {
-  maximo = numeros[i]
+  var maximo = numeros[0];
+for (var i = 1; i < numeros.length; i++) {
+if (numeros[i] > maximo) {
+  maximo = numeros[i];
 }
 }
-return maximo
+return maximo;
 }
 
 
@@ -146,7 +147,7 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
-  if (numeroDeDia.length === 7 || numeroDeDia === 1) {
+  if (numeroDeDia === 7 || numeroDeDia === 1) {
     return "Es fin de semana"
   }
   return "Es dia Laboral"
@@ -157,13 +158,12 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  let numero = n.toString()
-  if (numero.charAT(0) === 0) {
+  let num = n.toString()
+  if(num.charAt(0) === "9"){
     return true
   }
-return false
+  return false
 }
-
 
 function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
