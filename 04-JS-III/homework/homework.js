@@ -17,7 +17,7 @@ function devolverUltimoElemento(array) {
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
-  console.log(obtenerLargoDelArray.length);
+  console.log(array.length);
 }
 
 
@@ -27,7 +27,7 @@ function incrementarPorUno(array) {
   // y devuelve el array
   // Tu código:
   var Nuevoarray = []
-  for(var x = 0; x < incrementarPorUno.length; x++)[
+  for(var x = 0; x < array.length; x++)[
     Nuevoarray[x] = array[x] + 1
   ]
   return Nuevoarray;
@@ -38,7 +38,7 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
- agregarItemAlFinalDelArray[agregarItemAlFinalDelArray.length] = elemento;
+ array[array.length] = elemento;
  return array;
 }
 
@@ -59,7 +59,7 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-  return dePalabrasAFrase.join (" ");
+  return palabras.join (" ");
 }
 
 
@@ -104,9 +104,8 @@ function numeroMasGrande(numeros) {
   // Tu código:
   var maximo = numero[0];
 for (var i = 1; i < numero.length; i++) {
-if (numero[i] < maximo) {
+if (numero[i] > maximo) {
   maximo = numeros[i]
-
 }
 }
 return maximo
@@ -147,7 +146,7 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
-  if (numeroDeDia.length === 0 || numeroDeDia === 1) {
+  if (numeroDeDia.length === 7 || numeroDeDia === 1) {
     return "Es fin de semana"
   }
   return "Es dia Laboral"
