@@ -76,7 +76,7 @@ function tienenMismaLongitud(str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código:
-  return (str1 === str2)
+  return (str1.length === str2.length)
 }
 
 
@@ -84,12 +84,10 @@ function menosQueNoventa(num) {
   // Devuelve "true" si el argumento de la función "num" es menor que noventa
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (num > 90) {
-    return true;
-
-}else {
-return false;
-
+if (num < 90) {
+  return true
+} else {
+  return false
 }
 }
 
@@ -104,7 +102,7 @@ function mayorQueCincuenta(num) {
 function obtenerResto(x, y) {
   // Obten el resto de la división de "x" entre "y"
   // Tu código:
-return (x / y)
+return (x % y)
 
 }
 
@@ -123,7 +121,7 @@ function esImpar(num) {
   // Devuelve "true" si "num" es impar
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (num % 2 === 1) { return true;
+  if (num % 2 === 0) { return false;
 
   }else {
   return true
@@ -149,7 +147,7 @@ function elevarAlCubo(num) {
 function elevar(num, exponent) {
   // Devuelve el valor de "num" elevado al exponente dado en "exponent"
   // Tu código:
-  return Math,pow(num, exponent);
+  return Math.pow(num, exponent);
 
 }
 
@@ -203,21 +201,22 @@ function combinarNombres(nombre, apellido) {
   // Devuelve "nombre" y "apellido" combinados en una string y separados por un espacio.
   // Ejemplo: "Soy", "Henry" -> "Soy Henry"
   // Tu código:
-  concat  (nombre + apellido);
+  var nombreCombinado = (nombre + " " + apellido)
+  return nombreCombinado
+;
 }
 
 function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Martin" -> "Hola Martin!"
   // Tu código:
-  concat ("Hola" + nombre + "!") ;
+  return "Hola " + nombre + "!" ;
 }
 
 function obtenerAreaRectangulo(alto, ancho) {
   // Retornar el area de un rectángulo teniendo su altura y ancho
   // Tu código:
-  var obtenerAreaRectangulo = alto * ancho;
-  return
+ return alto * ancho
 
 }
 
@@ -225,16 +224,16 @@ function obtenerAreaRectangulo(alto, ancho) {
 function retornarPerimetro(lado){
   //Escibe una función a la cual reciba el valor del lado de un cuadrado y retorne su perímetro.
   //Escribe tu código aquí
-  var retornarPerimetro = lado + lado + lado + lado;
-  return
+  return lado + lado + lado + lado;
+  
 }
 
 
 function areaDelTriangulo(base, altura){
   //Desarrolle una función que calcule el área de un triángulo.
   //Escribe tu código aquí
-var areaDelTriangulo = (base * altura) / 2;
-return
+return (base * altura) / 2;
+
 }
 
 

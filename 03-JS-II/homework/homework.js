@@ -1,5 +1,6 @@
 // No cambies los nombres de las funciones.
 
+const { normalize } = require("@11ty/eleventy/src/TemplatePath");
 const { Tab } = require("bootstrap");
 
 function obtenerMayor(x, y) {
@@ -8,15 +9,10 @@ function obtenerMayor(x, y) {
   // Si son iguales, devuelve cualquiera de los dos
   // Tu código:
   if (x < y) {
-    console.log(y);
-  
-  }else if (x > y) {
-      console.log (x);
-
-    }else if (x === y) {
-      console.log (x || y);
-    }
+  return x
   }
+  return y
+}
 
 
 function mayoriaDeEdad(edad) {
@@ -24,9 +20,9 @@ function mayoriaDeEdad(edad) {
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
   if (edad >= 18) {
-    console.log("Allowed");
+    return "Allowed";
   }else {
-    console.log("Not allowed");
+    return "Not allowed";
   }
 }
   
@@ -36,14 +32,14 @@ function conection(status) {
   //Cuando el estado es igual a 2, el usuario está "Away"
   //De lo contrario, presumimos que el usuario está "Offline"
   //Devolver el estado de conexión de usuario en cada uno de los casos.
-  if (conection = 1) {
-    console.log("Online");
+  if (conection === 1) {
+    return "Online";
 
-  }else if (conection = 2) {
-    console.log("Away");
+  }else if (conection === 2) {
+    return "Away";
 
   }else {
-    console.log("Offline");
+    return "Offline";
   }
 
 }
@@ -56,16 +52,16 @@ function saludo(idioma) {
   // Si "idioma" no es ninguno de los anteiores o es `undefined` devuelve "Hola!"
   // Tu código:
   if (idioma = "aleman") {
-    console.log("Guten Tag");
+    return"Guten Tag";
     
   }else if (idioma = "mandarin") {
-    console.log("Ni Hao");
+    return "Ni Hao";
 
   }else if (idioma = "ingles") {
-    console.log("Hello!");
+    return "Hello!";
 
   }else {
-    console.log ("Hola!");
+    return "Hola!";
   }
 }
 
@@ -77,22 +73,17 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
-switch (colors) {
-case "blue": {
-  console.log("This is blue");
-
-}case "red": {
-  console.log("This is red");
-
-}case "green": {
-  console.log("This is green");
-
-}case "orange": {
-  console.log("this is orange");
-
-}default: {
-  console.log("Color not found");
-}
+switch(color) {
+  case "blue":
+    return "This is blue";
+  case "red":
+    return "This is red"
+  case "green":
+    return "This is green"
+  case "orange":
+    return "This is orange"
+  default:
+    return "Color not found"
 }
 }
 
@@ -101,23 +92,14 @@ function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (esDiezOCinco === 10 || esDiezOCinco === 5) {
-    console.log("true");
-
-  }else {
-    console.log("false");
-  }
+ return numero === 10 || numero === 5
 }
 
 function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
-}if (estaEnRango < 50 && estaEnRango > 20) {
-  console.log("true");
-  
-}else {
-  console.log("false");
+return numero < 50 && numero > 20;
 }
 
 function esEntero(numero) {
@@ -128,13 +110,7 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
-  if (numero - Math.floor(numero) === 0) {
-    return "true";
-
-  }else {
-    return "false";
-  }
-  
+ return numero % 1 === 0  
 }
 
 function fizzBuzz(numero) {
@@ -142,16 +118,17 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
-  if (numero / 3 === 0) {
+  if (numero % 3 === 0) {
     return "fizz";
 
-  }else if (numero / 5 === 0) {
+  }else if (numero % 5 === 0) {
     return "buzz";
 
-  }else if ((numero / 3 && numero / 5) === 0) {
+  }else if ((numero % 3 && numero % 5) === 0) {
     return "fizzbuzz";
 
   }
+  return numero
 }
 
 function operadoresLogicos(num1, num2, num3) {
@@ -164,13 +141,13 @@ function operadoresLogicos(num1, num2, num3) {
   if (num1 > num2 && num1 > num3 && num1 > 0) {
     return "Número 1 es mayor y positivo";
 
-  }else if ((num1, num2, num3) < 0 ) {
+  }else if (num1 < 0 || num2 < 0 || num3 < 0) {
     return "Hay negativos";
 
-  }else if (num3 > (num2, num1)) {
+  }else if (num3 > num2 && num3 > num1) {
     return num3 + 1;
 
-  } else if ((num1, num2, num3) === 0) {
+  } else if (num1 === 0 || num2 === 0 || num3 === 0) {
     return "Error";
 
     } else {
@@ -202,7 +179,7 @@ function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-if (valor = true); {
+if (valor === true); {
   return "Soy verdadero";
     
   }
